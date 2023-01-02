@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>InnerPage</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Meta descriptions may be included in search results to concisely summarize page content.">
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <!-- Login wrapper -->
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="nav-wrapper">
+                    <a href="#!" class="nav-logo" title="Company">
+                        <img src="./images/dashboard-logo.svg" alt="company" class="hide-on-med-and-down">
+                        <img src="./images/dashboard-logo-mobile.svg" alt="company"
+                            class="show-on-medium-and-down hide-on-med-and-up">
+                    </a>
+                    <ul>
+                        <li>
+                            <form class="search-form">
+                                <div class="input-field search">
+                                    <input id="search" type="search" placeholder="Search">
+                                    <button type="button" class="btn btn-search">
+                                        <img src="./images/search-ic.svg" alt="search">
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <button type="button" class="btn-flat btn-search show-on-medium-and-down" title="Search">
+                                <img src="./images/search-ic.svg" alt="Search">
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn-flat btn-notification" title="Notification">
+                                <img src="./images/notification-ic.svg" alt="Notification">
+                            </button>
+                        </li>
+                        <li>
+                            <a class='dropdown-trigger btn-flat btn-profile' type="menu" href='#'
+                                data-target='profile-dropdown'>
+                                <img src="./images/profile.png" alt="Profile" class="profile">
+                                <div class="profile-content">
+                                    <div>
+                                        <h5>John Doe</h5>
+                                        <h6>Super Admin</h6>
+                                    </div>
+                                    <img src="./images/arrow-downward.svg" alt="arrow" class="arrow">
+                                </div>
+                            </a>
+
+                            <!-- Dropdown Structure -->
+                            <ul id='profile-dropdown' class='dropdown-content'>
+                                <li><a href="#!">Profile</a></li>
+                                <li><a href="#!">Help</a></li>
+                                <li><a href="./login.html">Log out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="content-wrapper">
+            <div class="sidebar-overlay"></div>
+            <div class="sidebar">
+                <ul class="sidebar-list">
+                    <li>
+                        <a href="#" class="menu-btn show-on-large-and-down hide-on-large-only">
+                            <span class="one"></span>
+                            <span class="two"></span>
+                            <span class="three"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./dashboard.html" type="button" class="nav-link" title="Dashboard">
+                            <img src="./images/dashboard-ic.svg" alt="dashboard" />
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./inner-page.html" type="button" class="nav-link active" title="User">
+                            <img src="./images/users-ic.svg" alt="Users" />
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" type="button" class="nav-link" title="Statistics">
+                            <img src="./images/statistics-ic.svg" alt="statistics" />
+                            <span>Statistics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" type="button" class="nav-link" title="Orders">
+                            <img src="./images/shopping-bag-ic.svg" alt="Orders" />
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" type="button" class="nav-link" title="Docs">
+                            <img src="./images/file-text-ic.svg" alt="Docs" />
+                            <span>Docs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" type="button" class="nav-link" title="Settings">
+                            <img src="./images/setting-ic.svg" alt="Settings" />
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <section class="main-content">
+                <h2 class="main-heading split-text">User</h2>
+                <div class="card form-card">
+                    <div class="card-content">
+                        <h4 class="rotate-text">One Column</h4>
+                        <div class="inner-page-form-group">
+                            <div class="input-field login-input-field">
+                                <input id="user_name" type="text" class="validate">
+                                <label for="user_name">Name</label>
+                            </div>
+                            <div class="input-field login-input-field">
+                                <select>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                                <label>Drop Down</label>
+                            </div>
+                            <div class="input-field login-input-field">
+                                <textarea id="textarea1" class="materialize-textarea validate"
+                                    style="height: 78px;"></textarea>
+                                <label for="textarea1">Comments</label>
+                            </div>
+                        </div>
+
+                        <h4 class="rotate-text">Two Column</h4>
+                        <div class="row second-row">
+                            <div class="col s12 m6">
+                                <div class="input-field login-input-field">
+                                    <input id="user_name1" type="text" class="validate">
+                                    <label for="user_name1">UserName</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="input-field login-input-field">
+                                    <select>
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                    <label>Drop Down</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="input-field login-input-field">
+                                    <input id="name" type="text" class="validate" value="John">
+                                    <label for="name">Name</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="input-field login-input-field password">
+                                    <input id="password" type="password" class="validate">
+                                    <label for="password">Password</label>
+                                    <button type="button" class="btn">
+                                        <img src="./images/password-ic.svg" alt="password">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="rotate-text">Three Column</h4>
+                        <div class="row third-row">
+                            <div class="col s12 m4">
+                                <div class="input-field login-input-field">
+                                    <input id="error" type="text" class="validate">
+                                    <label for="error">Error</label>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <div class="input-field login-input-field">
+                                    <input id="focus" type="text" class="validate" value="John">
+                                    <label for="focus">Focus</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m4">
+                                <div class="input-field login-input-field">
+                                    <input id="disabled" type="text" class="validate" value="John" disabled>
+                                    <label for="disabled">Disabled</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <h4 class="rotate-text">Four Column</h4>
+                        <div class="row third-row">
+                            <div class="col s12 m3">
+                                <div class="input-field login-input-field password">
+                                    <input id="password2" type="password" class="validate">
+                                    <label for="password2">Password</label>
+                                    <button type="button" class="btn">
+                                        <img src="./images/password-ic.svg" alt="password">
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m3">
+                                <div class="input-field login-input-field">
+                                    <select>
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                    <label>Drop Down</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m3">
+                                <div class="input-field login-input-field">
+                                    <input id="disabled" type="text" class="validate" value="John" disabled>
+                                    <label for="disabled">Disabled</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m3">
+                                <div class="input-field login-input-field">
+                                    <input id="user_name2" type="text" class="validate">
+                                    <label for="user_name2">Name</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <h4 class="rotate-text">Other Element</h4>
+                        <div class="other-form">
+                            <h6>File Upload</h6>
+                            <div class="upload-input">
+                                <input type="file" id="Inputfile">
+                                <div style="display: flex;">
+                                    <label class="upload-text" for="Inputfile"><img src="./images/upload-ic.svg"
+                                            alt="upload">Upload</label>
+                                    <span id="file-chosen">No files selected</span>
+                                </div>
+                            </div>
+
+                            <h6>Radio Button</h6>
+                            <div class="radio-group">
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="group1" type="radio" checked />
+                                            <span>Option 1</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="group1" type="radio" />
+                                            <span>Option 2</span>
+                                        </label>
+                                    </p>
+                                </form>
+                            </div>
+
+                            <h6>Checkbox</h6>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" class="filled-in" checked="checked" />
+                                    <span>Option 1</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" class="filled-in" />
+                                    <span>Option 2</span>
+                                </label>
+                            </div>
+
+                            <h6>Snackbar</h6>
+                            <div class="row alert-group">
+                                <div class="col s12 m6">
+                                    <div class="alert danger">
+                                        <div>
+                                            <img src="./images/error-ic.svg" alt="error">
+                                            <p>This is an error Message</p>
+                                        </div>
+                                        <button type="menu" class="btn-close btn-flat">
+                                            <img src="./images/close-red-ic.svg" alt="close">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col s12 m6">
+                                    <div class="alert info">
+                                        <div>
+                                            <img src="./images/info-ic.svg" alt="info">
+                                            <p>This is an information message!</p>
+                                        </div>
+                                        <button type="menu" class="btn-close btn-flat">
+                                            <img src="./images/close-blue-ic.svg" alt="close">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col s12 m6">
+                                    <div class="alert warning">
+                                        <div>
+                                            <img src="./images/warning-ic.svg" alt="warning">
+                                            <p>This is a warning message!</p>
+                                        </div>
+                                        <button type="menu" class="btn-close btn-flat">
+                                            <img src="./images/close-yellow-ic.svg" alt="close">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col s12 m6">
+                                    <div class="alert success">
+                                        <div>
+                                            <img src="./images/success-ic.svg" alt="success">
+                                            <p>This is a Success message!</p>
+                                        </div>
+                                        <button type="menu" class="btn-close btn-flat">
+                                            <img src="./images/close-green-ic.svg" alt="close">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h6>CTA</h6>
+                            <div class="btn-group">
+                                <button type="button" class="btn-primary btn">
+                                    <span>Primary</span>
+                                </button>
+                                <button type="button" class="btn-outline btn">
+                                    <span>Secondary</span>
+                                    <span class="lines"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h4 class="rotate-text">Tabs</h4>
+                        <div class="row tab-row">
+                            <div class="col s12">
+                                <ul class="tabs">
+                                    <li class="tab"><a href="#tab1" class="active">Tab 1</a></li>
+                                    <li class="tab"><a href="#tab2">Tab 2</a></li>
+                                    <li class="tab"><a href="#tab3">Tab 3</a></li>
+                                </ul>
+                            </div>
+                            <div id="tab1" class="col s12 tab-content">
+                                It is a long established fact that a reader will be
+                                distracted by the readable content of a page when looking at its layout. The point of
+                                using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+                                opposed to using 'Content here, content here', making it look like readable English.
+                                Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+                                default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                                their infancy. Various versions have evolved over the years, sometimes by accident,
+                                sometimes on purpose (injected humour and the like).
+                            </div>
+                            <div id="tab2" class="col s12 tab-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+                                repellat corporis minima odit cupiditate ipsam dignissimos iure ab eveniet similique
+                                fugiat libero tempore ad, ducimus, iusto architecto unde? Suscipit, corporis.
+                                Aperiam iusto dolor aut nihil, suscipit delectus itaque ad repellat aspernatur assumenda
+                                omnis recusandae laborum quasi iste facilis debitis tempora, nulla, quos eligendi harum
+                                officiis saepe obcaecati numquam facere. Possimus.
+                            </div>
+                            <div id="tab3" class="col s12 tab-content">Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit.
+                                Eaque illo esse asperiores. Itaque, minus nisi inventore mollitia eveniet facere
+                                architecto natus quisquam laboriosam dicta dolorem? Nesciunt deserunt accusamus illum
+                                hic!</div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- JavaScripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
