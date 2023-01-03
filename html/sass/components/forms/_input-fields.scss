@@ -96,7 +96,7 @@ textarea.materialize-textarea {
   &:focus.invalid ~ .helper-text:after {
     @extend %custom-error-message;
   }
-  &:focus.invalid ~ label {
+  &.invalid ~ label, &:focus.invalid ~ label {
     color: $input-error-color;
   }
 
@@ -119,7 +119,6 @@ textarea.materialize-textarea {
 }
 %invalid-input-style {
   border-bottom: $input-invalid-border;
-  box-shadow: 0 1px 0 0 $input-error-color;
 }
 %hidden-text {
   color: transparent;

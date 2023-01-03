@@ -69,9 +69,12 @@ $(document).ready(function () {
     });
 
     $(".btn-flat.btn-close").on('click', function (e) {
-        console.log('clicked');
         $(this).parents('.col').hide();
-        console.log('clicked');
+    });
+
+    $(".password-btn").on('click', function (e) {
+        $(this).toggleClass('is-eye-open');
+        // $('.eye-open').hide();
     });
 
 
@@ -182,6 +185,7 @@ $(document).ready(function () {
     $('.counter').countUp();
 
 
+    gsap.registerPlugin(TextPlugin, DrawSVGPlugin);
     const tl = gsap.timeline();
 
     tl.from("path", {
@@ -192,20 +196,20 @@ $(document).ready(function () {
         stagger: {
             amount: 1,
             from: "random",
-            // onComplete: function () {
-            //     gsap.to(this.targets()[0], {
-            //         // fill: "#FFF",
-            //         ease: "power1.inOut",
-            //         duration: 0.5
-            //     });
-            // }
+
         }
     });
+
+    // tl.fromTo(".nav-logo svg path", { drawSVG: "100%" }, { duration: 1, drawSVG: "50% 50%", stagger: 0.1 })
+    // let envelopeCheck = gsap.timeline({ paused: true })
+    //     .to('#square', { duration: 0.5, ease: "power2.in", drawSVG: "70% 70%" })
+    //     .to('#square', { duration: 0.5, ease: "power2.out", drawSVG: "81% 100%" })
+    //     .to('#square', { duration: 0.5, ease: "power2.out", drawSVG: "81% 100%" })
+    //     .to('#square', { duration: 0.5, ease: "power2.out", drawSVG: "81% 100%" })
 
 
     // Animation on Login heading
     const text = new SplitType('.split-text');
-    gsap.registerPlugin(TextPlugin);
 
 
     const textwords = new SplitType('.split-word', { types: 'words' });
@@ -297,9 +301,6 @@ $(document).ready(function () {
         }
     );
 
-    // const text_rotate = new SplitType('.rotate-text');
-
-
     var titles = gsap.timeline();
 
 
@@ -315,11 +316,7 @@ $(document).ready(function () {
             stagger: 0.3,
             ease: Expo.out,
         }
-
-
     );
-
-
 
 
     // Don't add anything below this --------------------------------------------------------------
