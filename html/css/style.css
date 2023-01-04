@@ -914,7 +914,7 @@ header .navbar {
 
 .btn-flat.btn-notification:focus,
 .btn-flat.btn-notification:active {
-    background-color: #5dd4e96c;
+    background-image: linear-gradient(22.69deg, rgb(93, 213, 233, 0.4) 33.82%, rgb(133, 52, 220, 0.4) 67.96%);
 }
 
 li>.btn-flat.btn-search {
@@ -938,7 +938,7 @@ li>.btn-flat.btn-search:hover:not(:focus, :active) {
 
 li>.btn-flat.btn-search:focus,
 li>.btn-flat.btn-search:active {
-    background-color: #5dd4e96c;
+    background-image: linear-gradient(22.69deg, rgb(93, 213, 233, 0.4) 33.82%, rgb(133, 52, 220, 0.4) 67.96%);
 }
 
 .btn-flat.btn-notification img {
@@ -963,14 +963,18 @@ li>.btn-flat.btn-search:active {
     background-color: transparent;
 }
 
-.btn-flat.btn-profile:hover:not(:focus, :active) .profile-content h5,
-.btn-flat.btn-profile:hover:not(:focus, :active) .profile-content h6 {
+.btn-flat.btn-profile:hover .profile-content h5,
+.btn-flat.btn-profile:hover .profile-content h6,
+.btn-flat.btn-profile:focus .profile-content h5,
+.btn-flat.btn-profile:focus .profile-content h6 ,
+.btn-flat.btn-profile:active .profile-content h5,
+.btn-flat.btn-profile:active .profile-content h6 {
     color: #6D6D6D;
 }
 
 .btn-flat.btn-profile:focus,
 .btn-flat.btn-profile:active {
-    background-color: #5dd4e96c;
+    background-image: linear-gradient(22.69deg, rgb(93, 213, 233, 0.4) 33.82%, rgb(133, 52, 220, 0.4) 67.96%);
 }
 
 .btn-flat.btn-profile img {
@@ -1276,6 +1280,15 @@ li>.btn-flat.btn-search:active {
 .card.table-card .btn-flat.btn-menu img {
     display: block;
     height: 35px;
+}
+
+.card.counter-card:hover, .card.counter-card:focus {
+    border: 1px solid #5DD5E9;
+    border-radius: 4px;
+}
+
+.card.counter-card:hover .card-content, .card.counter-card:focus .card-content {
+    padding: 25px 29px 20px;
 }
 
 .card.counter-card .card-content {
@@ -1865,6 +1878,10 @@ svg.info-svg path {
         padding: 20px;
     }
 
+    .card.counter-card:hover .card-content, .card.counter-card:focus .card-content {
+        padding: 19px;
+    }
+
     .main-content {
         padding: 30px;
     }
@@ -2328,7 +2345,7 @@ svg.info-svg path {
         margin: -4.5px 0;
     }
 
-    .upload-text{
+    .upload-text {
         min-width: 106px;
     }
 
