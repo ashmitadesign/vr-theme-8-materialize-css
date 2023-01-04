@@ -256,8 +256,23 @@ select:-moz-focusring {
 }
 
 ::-ms-reveal,
-::-ms-clear {
+::-ms-clear,
+input::-webkit-caps-lock-indicator,
+input::-webkit-credentials-auto-fill-button {
     display: none;
+}
+
+input::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+
+input::-webkit-textfield-decoration-container {
+    display: none;
+    /* or whatever styling you want */
 }
 
 option:not(:checked) {
@@ -521,6 +536,7 @@ input:-internal-autofill-selected {
 .login-row.row::after {
     content: ' ';
     position: absolute;
+    min-height: 100%;
     height: 100%;
     width: calc(100% - 148px);
     background: url('../images/login-banner.jpg') no-repeat;
@@ -530,6 +546,7 @@ input:-internal-autofill-selected {
     background-size: cover;
     z-index: 0;
     background-position: center;
+    display: block;
 }
 
 
@@ -966,7 +983,7 @@ li>.btn-flat.btn-search:active {
 .btn-flat.btn-profile:hover .profile-content h5,
 .btn-flat.btn-profile:hover .profile-content h6,
 .btn-flat.btn-profile:focus .profile-content h5,
-.btn-flat.btn-profile:focus .profile-content h6 ,
+.btn-flat.btn-profile:focus .profile-content h6,
 .btn-flat.btn-profile:active .profile-content h5,
 .btn-flat.btn-profile:active .profile-content h6 {
     color: #6D6D6D;
@@ -1282,12 +1299,14 @@ li>.btn-flat.btn-search:active {
     height: 35px;
 }
 
-.card.counter-card:hover, .card.counter-card:focus {
+.card.counter-card:hover,
+.card.counter-card:focus {
     border: 1px solid #5DD5E9;
     border-radius: 4px;
 }
 
-.card.counter-card:hover .card-content, .card.counter-card:focus .card-content {
+.card.counter-card:hover .card-content,
+.card.counter-card:focus .card-content {
     padding: 25px 29px 20px;
 }
 
@@ -1878,7 +1897,8 @@ svg.info-svg path {
         padding: 20px;
     }
 
-    .card.counter-card:hover .card-content, .card.counter-card:focus .card-content {
+    .card.counter-card:hover .card-content,
+    .card.counter-card:focus .card-content {
         padding: 19px;
     }
 
