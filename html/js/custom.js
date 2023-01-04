@@ -72,10 +72,37 @@ $(document).ready(function () {
         $(this).parents('.col').hide();
     });
 
-    $(".password-btn").on('click', function (e) {
-        $(this).toggleClass('is-eye-open');
-        // $('.eye-open').hide();
+    // $(".password-btn").on('click', function (e) {
+    //     $(this).toggleClass('is-eye-open');
+    // });
+
+
+    // if ($(".password").length) {
+    //     const togglePassword = document.querySelector('.password-btn');
+    //     const password = document.querySelector('.password input');
+
+    //     togglePassword.addEventListener('click', function (e) {
+    //         // toggle the type attribute
+    //         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    //         password.setAttribute('type', type);
+    //         this.classList.toggle('is-eye-open');
+    //     });
+    // }
+
+
+    $(".password-btn").click(function(){        
+        var $this = $(this).closest(".password");
+        var $input = $this.find("input");
+        if(!$this.hasClass("is-eye-open")){
+            $this.addClass("is-eye-open");
+            $input.attr("type", "text");
+        }else{
+            $this.removeClass("is-eye-open");
+            $input.attr("type", "password");
+        }
     });
+
+
 
 
     $('.dropdown-trigger').dropdown();
@@ -199,14 +226,6 @@ $(document).ready(function () {
 
         }
     });
-
-    // tl.fromTo(".nav-logo svg path", { drawSVG: "100%" }, { duration: 1, drawSVG: "50% 50%", stagger: 0.1 })
-    // let envelopeCheck = gsap.timeline({ paused: true })
-    //     .to('#square', { duration: 0.5, ease: "power2.in", drawSVG: "70% 70%" })
-    //     .to('#square', { duration: 0.5, ease: "power2.out", drawSVG: "81% 100%" })
-    //     .to('#square', { duration: 0.5, ease: "power2.out", drawSVG: "81% 100%" })
-    //     .to('#square', { duration: 0.5, ease: "power2.out", drawSVG: "81% 100%" })
-
 
     // Animation on Login heading
     const text = new SplitType('.split-text');

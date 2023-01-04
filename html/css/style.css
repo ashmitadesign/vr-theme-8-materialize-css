@@ -255,6 +255,11 @@ select:-moz-focusring {
     text-shadow: 0 0 0 #000;
 }
 
+::-ms-reveal,
+::-ms-clear {
+    display: none;
+}
+
 option:not(:checked) {
     color: black;
 }
@@ -292,8 +297,8 @@ p {
     line-height: 17px;
 }
 
-:root {
-    --width:
+input:-internal-autofill-selected {
+    background-color: transparent !important;
 }
 
 
@@ -468,7 +473,6 @@ p {
     padding: 42px 47px;
     position: relative;
     z-index: 5;
-    height: calc(100vh - 80px);
     overflow: hidden;
 }
 
@@ -502,11 +506,12 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    min-height: calc(100vh - 164px);
     margin-bottom: 0;
     position: relative;
     z-index: 5;
     overflow: hidden;
+    padding: 20px 0;
 }
 
 .login-row.row>div {
@@ -691,11 +696,11 @@ p {
     display: none;
 }
 
-.login-input-field.password .btn.is-eye-open .eye-close {
+.login-input-field.password.is-eye-open .btn .eye-close {
     display: block;
 }
 
-.login-input-field.password .btn.is-eye-open .eye-open {
+.login-input-field.password.is-eye-open .btn .eye-open {
     display: none;
 }
 
@@ -1585,7 +1590,7 @@ li>.btn-flat.btn-search:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 124px;
+    min-width: 124px;
     font-size: 15px;
     line-height: 17px;
     color: #6D6D6D;
@@ -1828,6 +1833,10 @@ svg.info-svg path {
         padding: 34px;
     }
 
+    .login-row.row {
+        min-height: calc(100vh - 148px);
+    }
+
     .login-content {
         margin-left: 38px;
     }
@@ -1946,7 +1955,6 @@ svg.info-svg path {
 
     .login-container {
         padding: 20px;
-        height: calc(100vh - 60px);
     }
 
     .login-row.row::after {
@@ -1959,6 +1967,7 @@ svg.info-svg path {
 
     .login-row.row {
         padding: 20px;
+        min-height: calc(100vh - 100px);
     }
 
     .login-card.card {
@@ -2053,7 +2062,7 @@ svg.info-svg path {
     }
 
     .login-card.card {
-        padding: 8px 0 8px;
+        padding: 8px 0;
     }
 
     .login-logo {
@@ -2167,12 +2176,11 @@ svg.info-svg path {
     /* Login page
 --------------------------------------------------------------------------------------------------------*/
     .login-wrapper {
-        padding: 14px;
+        padding: 16px;
     }
 
     .login-container {
-        padding: 12px;
-        height: calc(100vh - 28px);
+        padding: 0;
     }
 
     .login-card.card {
@@ -2182,6 +2190,7 @@ svg.info-svg path {
     .login-row.row {
         align-items: inherit;
         padding: 24px 16px;
+        min-height: calc(100vh - 32px);
     }
 
     h2 {
@@ -2289,7 +2298,7 @@ svg.info-svg path {
     }
 
     .card .card-content {
-        padding: 8px;
+        padding: 16px;
     }
 
     .main-content {
@@ -2317,6 +2326,10 @@ svg.info-svg path {
 
     .card.table-card .table-responsive .btn-flat.btn-menu {
         margin: -4.5px 0;
+    }
+
+    .upload-text{
+        min-width: 106px;
     }
 
 }
